@@ -9,6 +9,10 @@ This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
 The following packages will be downloaded and installed.
 
 #+begin_src emacs-lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+
   (defvar starter-kit-packages (list 
                                 'ace-jump-mode                                
                                 'ag
@@ -20,6 +24,7 @@ The following packages will be downloaded and installed.
                                 'org-ac
                                 'browse-kill-ring
                                 'css-mode
+                                'elpy
                                 'emmet-mode
                                 'exec-path-from-shell
                                 'expand-region
