@@ -10,3 +10,10 @@ I found installation of emacs using homebrew to be the easiest approach on Mac O
 
 	brew install emacs --cocoa
 	brew link emacs
+
+# Git
+
+I'm working off of orgv8
+
+https://help.github.com/articles/configuring-a-remote-for-a-fork/
+https://help.github.com/articles/syncing-a-fork/
