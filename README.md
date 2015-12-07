@@ -17,3 +17,7 @@ I'm working off of orgv8
 
 https://help.github.com/articles/configuring-a-remote-for-a-fork/
 https://help.github.com/articles/syncing-a-fork/
+
+    git checkout amarder
+    git fetch upstream
+    git merge upstream/orgv8
