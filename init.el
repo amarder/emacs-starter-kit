@@ -71,3 +71,6 @@
 (org-babel-load-file (expand-file-name "starter-kit.org" dotfiles-dir))
 
 ;;; init.el ends here
+(put 'downcase-region 'disabled nil)
+(put 'erase-buffer 'disabled nil)
+(put 'upcase-region 'disabled nil)
