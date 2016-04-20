@@ -14,20 +14,30 @@ The following packages will be downloaded and installed.
              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 
   (defvar starter-kit-packages (list 
-                                'ace-jump-mode                                
+                                'adaptive-wrap  
                                 'ag
                                 'anti-zenburn-theme
-                                'auto-complete
-                                'ac-emmet
-                                'ac-etags
-                                'ac-ispell
+                                ;;'auto-complete
+                                ;;'ac-emmet
+                                ;;'ac-etags
+                                ;;'ac-ispell
                                 'org-ac
                                 'browse-kill-ring
+                                'company
+                                'company-auctex
+                                'company-math
+                                'company-web
+                                'company-statistics
+                                'company-quickhelp
                                 'css-mode
                                 'elpy
+                                'csv-mode
+                                'deft
                                 'emmet-mode
                                 'exec-path-from-shell
                                 'expand-region
+                                'flycheck
+                                'flx-ido
                                 ;; 'gist
                                 'hl-line+
                                 'idle-highlight-mode
@@ -40,13 +50,13 @@ The following packages will be downloaded and installed.
                                 'multiple-cursors
                                 'pandoc-mode
                                 'polymode
-                                ;;'pos-tip
+                                'pos-tip
                                 'powerline
                                 'python-mode
                                 'ipython
                                 'jedi
                                 'redo+
-                                'ruby-mode
+                                ;; 'ruby-mode
                                 'smartparens 
                                 'smex
                                 'solarized-theme
@@ -55,11 +65,11 @@ The following packages will be downloaded and installed.
                                 'typopunct
                                 'visual-regexp
                                 'yaml-mode
-                                ;;'yasnippet
+                                'yasnippet
                                 'zenburn-theme
                                 'auctex
                                 'ess
-                                'r-autoyas                                                              
+                                'r-autoyas                                
                                 )
     "Libraries that should be installed by default.")
 #+end_src
