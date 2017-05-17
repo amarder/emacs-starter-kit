@@ -42,3 +42,9 @@ src/auctex-src/*elc
 /.#starter-kit-latex.org
 /index.org
 /vc-git.awk
+
+## probably emacs 25 files
+/abbrev_defs
+/ido.last
+/network-security.data
+/smex-items
