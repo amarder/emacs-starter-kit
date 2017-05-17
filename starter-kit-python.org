@@ -1,35 +1,64 @@
 #+TITLE: Starter Kit Python
 #+OPTIONS: toc:nil num:nil ^:nil
 
-This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
-
 * Starter kit Python
 
-Support for the Python programming language.
+I want to use ein and elpy together:
 
-** Check Dependencies
-
-Determine whether required packages are installed. If not, use ELPA to
-install them.
-#+begin_src emacs-lisp
-  (dolist (package '(elpy))
-    (unless (package-installed-p package)
-      (package-install package)))
-#+end_src
-
-** Use elpy
-   :PROPERTIES:
-   :CUSTOM_ID: python
-   :END:
+https://realpython.com/blog/python/emacs-the-best-python-editor/
 
 #+begin_src emacs-lisp
-(require 'elpy)
-(package-initialize)
-(elpy-enable)
-(elpy-use-ipython)
-#+end_src
+  ;; init.el --- Emacs configuration
+  
+  ;; INSTALL PACKAGES
+  ;; --------------------------------------
+  
+  (require 'package)
+  
+  (add-to-list 'package-archives
+         '("melpa" . "http://melpa.org/packages/") t)
+  
+  (package-initialize)
+  (when (not package-archive-contents)
+    (package-refresh-contents))
+  
+  (defvar myPackages
+    '(better-defaults
+      ein
+      elpy
+      flycheck
+      material-theme
+      py-autopep8))
+  
+  (mapc #'(lambda (package)
+      (unless (package-installed-p package)
+        (package-install package)))
+        myPackages)
+  
+  ;; BASIC CUSTOMIZATION
+  ;; --------------------------------------
+  
+  (setq inhibit-startup-message t) ;; hide the startup message
+  (load-theme 'material t) ;; load material theme
+  
+  ;; PYTHON CONFIGURATION
+  ;; --------------------------------------
+  
+  (elpy-enable)
+  (elpy-use-ipython)
+  
+  ;; use flycheck not flymake with elpy
+  (when (require 'flycheck nil t)
+    (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+    (add-hook 'elpy-mode-hook 'flycheck-mode))
+  
+  ;; enable autopep8 formatting on save
+  (require 'py-autopep8)
+  (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
-#+source: message-line
-#+begin_src emacs-lisp
-  (message "Starter Kit Python loaded.")
+  ;; Fix issues with new iPython
+  (setq python-shell-interpreter "ipython"
+    python-shell-interpreter-args "--simple-prompt -i")
+  
+  ;; init.el ends here
 #+end_src
