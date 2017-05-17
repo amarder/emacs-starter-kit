@@ -7,11 +7,6 @@ This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
   Support for editing LaTeX.
 
 ** Load Support Packages
-*** Prettify Math in Buffers
-#+source: latex-pretty-symbols 
-#+begin_src emacs-lisp
-  (require 'latex-pretty-symbols)
-#+end_src
 
 *** Load RefTeX
 #+srcname: reftex-support

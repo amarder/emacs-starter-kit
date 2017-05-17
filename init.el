@@ -5,6 +5,8 @@
 ;; This is the first thing to get loaded.
 ;;
 
+(package-initialize)
+
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
 (setq dotfiles-dir (file-name-directory (or load-file-name (buffer-file-name))))
 (setq autoload-file (concat dotfiles-dir "loaddefs.el"))
