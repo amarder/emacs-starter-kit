@@ -477,6 +477,7 @@ Located in [[file:starter-kit-text.org][starter-kit-text]]
 
 #+begin_src emacs-lisp
   (starter-kit-load "starter-kit-text.org")
+  (starter-kit-load "starter-kit-markdown.org")
 #+end_src
 
 ** Load User/System Specific Files
