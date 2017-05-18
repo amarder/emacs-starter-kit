@@ -215,3 +215,9 @@ We use this (rather than the underscore character) for compatibilty with Pandoc.
 #+begin_src emacs-lisp
   (message "Starter Kit LaTeX loaded.")
 #+end_src
+
+** Automatically refresh pdf files in DocView
+
+#+begin_src emacs-lisp 
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+#+end_src
