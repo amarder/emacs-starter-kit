@@ -220,4 +220,9 @@ We use this (rather than the underscore character) for compatibilty with Pandoc.
 
 #+begin_src emacs-lisp 
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+  ;; This is for png files / when working with R
+  ;; https://emacs.stackexchange.com/questions/2303/making-an-image-ie-image-mode-auto-reload-changes-from-disk
+  (add-hook 'image-mode-hook 'auto-revert-mode)
+  (auto-image-file-mode +1)
 #+end_src
