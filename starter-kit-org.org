@@ -156,6 +156,9 @@ Org-mode manual is available to the =info= command (bound to =C-h i=).
 #+begin_src emacs-lisp :tangle no
   (require 'org-bullets)
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+  ;; show the entire file when opened
+  (setq org-startup-folded 0)
 #+end_src
 
 #+source: message-line
